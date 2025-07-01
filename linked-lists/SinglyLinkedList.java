@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 class Node {
     int value;
     Node next;
@@ -10,11 +8,11 @@ class Node {
     }
 }
 
-class LinkedList {
+public class SinglyLinkedList {
     Node head;
     int count;
 
-    LinkedList() {
+    SinglyLinkedList() {
         this.head = null;
         this.count = 0;
     }
@@ -68,54 +66,5 @@ class LinkedList {
             temp.next = (temp.next).next;
             count--;
         }
-    }
-}
-
-public class SinglyLinkedList {
-    public static void main(String[] args) {
-        LinkedList list = new LinkedList();
-        int choice, value, n;
-        boolean isRunning = true;
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("\n===== Welcome to Linked List program =====\n");
-        System.out.println("1. Insert a node.");
-        System.out.println("2. Print the list.");
-        System.out.println("3. Delete a node.");
-        System.out.println("4. Exit");
-
-        while (isRunning) {
-            System.out.print("\nEnter your choice: ");
-            choice = sc.nextInt();
-
-            switch (choice) {
-                case 1:
-                    System.out.print("Enter the value to insert: ");
-                    value = sc.nextInt();
-                    list.insert(value);
-                    break;
-
-                case 2:
-                    list.printList();
-                    break;
-
-                case 3:
-                    System.out.print("Enter the index to delete (1-based): ");
-                    n = sc.nextInt();
-                    list.delete(n);
-                    break;
-
-                case 4:
-                    System.out.println("Terminating all operations...\n");
-                    sc.close();
-                    isRunning = false;
-                    break;
-
-                default:
-                    System.out.println("Wrong choice.");
-                    break;
-            }
-        }
-        sc.close();
     }
 }
