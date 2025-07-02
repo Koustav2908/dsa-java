@@ -32,12 +32,8 @@ public class SinglyLinkedList {
     }
 
     void printList() {
-        if (head == null) {
-            System.out.println("Underflow: Singly Linked List is empty.");
-        } else {
+        if (head != null) {
             Node temp = head;
-
-            System.out.print("The elements of the linked list are: ");
 
             while (temp != null) {
                 System.out.print(temp.value + " -> ");
@@ -47,24 +43,26 @@ public class SinglyLinkedList {
         }
     }
 
-    void delete(int n) {
-        if (head == null) {
-            System.out.println("Underflow: Singly Linked List is empty.");
-        } else if (n <= 0 || n > count) {
-            System.out.println("Invalid index " + n + ": Valid range is 1 to " + count);
-        } else if (n == 1) {
-            System.out.println(head.value + " deleted from the list.");
+    boolean delete(int n) {
+        if (head == null || n <= 0 || n > count) {
+            return false;
+        }
+
+        if (n == 1) {
             head = head.next;
-            count--;
         } else {
             Node temp = head;
 
             for (int i = 0; i < n - 2; i++) {
                 temp = temp.next;
             }
-            System.out.println((temp.next).value + " deleted from the list.");
             temp.next = (temp.next).next;
-            count--;
         }
+        count--;
+        return true;
+    }
+
+    int size() {
+        return count;
     }
 }
