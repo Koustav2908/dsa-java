@@ -78,6 +78,7 @@ public class BinarySearchTree {
 
     void preOrderTraversal() {
         preOrderTraversal(root);
+        System.out.println();
     }
 
     private void preOrderTraversal(TreeNode node) {
@@ -90,6 +91,7 @@ public class BinarySearchTree {
 
     void inOrderTraversal() {
         inOrderTraversal(root);
+        System.out.println();
     }
 
     private void inOrderTraversal(TreeNode node) {
@@ -102,6 +104,7 @@ public class BinarySearchTree {
 
     void postOrderTraversal() {
         postOrderTraversal(root);
+        System.out.println();
     }
 
     private void postOrderTraversal(TreeNode node) {
