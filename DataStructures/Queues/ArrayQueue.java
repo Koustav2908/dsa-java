@@ -61,7 +61,6 @@ public class ArrayQueue {
 
             System.out.println();
         }
-
         System.out.println();
     }
 }
